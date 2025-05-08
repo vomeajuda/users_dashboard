@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import UserCard from './components/UserCard';
 import './App.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -20,6 +21,15 @@ function App() {
         {users.map((user) => (
           <UserCard key={user.id} user={user} />
         ))}
+      </div>
+      <div className='arrow-container'>
+        <button className='arrow'>
+          <i className="bi bi-arrow-left"></i>
+        </button>
+        <p>1 ... ... {users.length / 5}</p>
+        <button className='arrow'>
+          <i className="bi bi-arrow-right"></i>
+        </button>
       </div>
     </div>
   );
