@@ -52,6 +52,14 @@ function App() {
           <i className="bi bi-arrow-right"></i>
         </button>
       </div>
+      <div>
+        <p>Ir para página:</p>
+        <input type="number" min={1} max={Math.ceil(users.length /5)} onKeyDown={(e) => {
+          if (e.key === 'Enter' && e.target.value > 0 && e.target.value <= Math.ceil(users.length / 5)) {
+            const pag = e.target.value;
+            setCurrentPage(pag);
+        }}}/>
+        </div>
     </div>
   );
 }
