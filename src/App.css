@@ -20,3 +20,10 @@
 .arrow {
   margin: 0 10px;
 }
+
+/* Ensure the body and html take the full height of the viewport */
+html, body {
+  display: flex;
+  justify-content: center; /* Centers content horizontally */
+  align-items: center; /* Centers content vertically */
+}
