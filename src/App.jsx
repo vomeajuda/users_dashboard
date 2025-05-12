@@ -20,7 +20,7 @@ function App() {
 
   const proxima = () => {
     if (pagAtual < Math.ceil(users.length / 5)) {
-      setCurrentPage(pagAtual + 1);
+      setCurrentPage(parseInt(pagAtual) + 1);
     } else {
       setCurrentPage(1);
     }
@@ -28,7 +28,7 @@ function App() {
 
   const anterior = () => {
     if (pagAtual > 1) {
-      setCurrentPage(pagAtual - 1);
+      setCurrentPage(parseInt(pagAtual) - 1);
     } else {
       setCurrentPage(Math.ceil(users.length / 5));
     }
