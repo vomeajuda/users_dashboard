@@ -20,17 +20,19 @@ function App() {
 
   const proxima = () => {
     if (pagAtual < Math.ceil(users.length / 5)) {
+      document.getElementById('ante').disabled = false;
       setCurrentPage(parseInt(pagAtual) + 1);
     } else {
-      setCurrentPage(1);
+      document.getElementById('prox').disabled = true;
     }
   };
 
   const anterior = () => {
     if (pagAtual > 1) {
+      document.getElementById('prox').disabled = false;
       setCurrentPage(parseInt(pagAtual) - 1);
     } else {
-      setCurrentPage(Math.ceil(users.length / 5));
+      document.getElementById('ante').disabled = true;
     }
   };
 
@@ -44,11 +46,11 @@ function App() {
         ))}
       </div>
       <div className='arrow-container'>
-        <button className='arrow' onClick={anterior}>
+        <button className='arrow' id='ante' onClick={anterior}>
           <i className="bi bi-arrow-left"></i>
         </button>
         <p>1 ... {pagAtual} ... {Math.ceil(users.length / 5)}</p>
-        <button className='arrow' onClick={proxima}>
+        <button className='arrow' id='prox' onClick={proxima}>
           <i className="bi bi-arrow-right"></i>
         </button>
       </div>
