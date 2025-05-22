@@ -6,6 +6,8 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 function App() {
   const [users, setUsers] = useState([]);
   const [pagAtual, setCurrentPage] = useState(1);
+  const [cardAberto, setCardAberto] = useState(false);
+  const [userSelect, setUserSelect] = useState(null);
 
   useEffect(() => {
     fetch('http://localhost:3001/peoples')
