@@ -6,6 +6,8 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 function App() {
   const [users, setUsers] = useState([]);
   const [pagAtual, setCurrentPage] = useState(1);
+  const [cardAberto, setCardAberto] = useState(false);
+  const [userSelect, setUserSelect] = useState(null);
 
   useEffect(() => {
     fetch('http://localhost:3001/peoples')
@@ -36,13 +38,23 @@ function App() {
     }
   };
 
+  const clickPopup = (user) => {
+    setUserSelect(user);
+    setCardAberto(true);
+  };
+
+  const fechar = () => {
+    setCardAberto(false);
+    setUserSelect(null);
+  };
+
   return (
     <div className="App">
       <h1>Dashboard de Usuários</h1>
       <p>Total de usuários: {users.length}</p>
       <div className="user-container">
         {usersAtuais.map((user) => (
-          <UserCard key={user.id} user={user} />
+          <UserCard key={user.id} user={user} onClick={clickPopup} />
         ))}
       </div>
       <div className='arrow-container'>
@@ -61,7 +73,18 @@ function App() {
             const pag = e.target.value;
             setCurrentPage(pag);
         }}}/>
+      </div>
+      {cardAberto && (
+        <div className="popup">
+          <div className="popup-texto">
+            <button className="fechar" onClick={fechar}>X</button>
+            <img className='popup-imagem' src={userSelect.avatar} alt={`${userSelect.firstName} avatar`} />
+            <h3>{userSelect.firstName} {userSelect.lastName}</h3>
+            <p>Email: {userSelect.email}</p>
+            <p>Address: {userSelect.address}</p>
+          </div>
         </div>
+      )}
     </div>
   );
 }
