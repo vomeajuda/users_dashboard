@@ -30,9 +30,10 @@ html, body {
 .popup {
   position: absolute;
   transform: translate(-50%, -50%);
-  top: 60%;
+  top: 50%;
   left: 50%;
   display: flex;
+  width: 5%;
   justify-content: center;
   align-items: center;
 }
@@ -42,7 +43,7 @@ html, body {
   color: black;
   padding: 2rem;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1rem;
   width: 30rem;
   border: 1px solid #000;
   border-radius: 10px;
@@ -58,8 +59,8 @@ html, body {
 .fechar {
   position: absolute;
   color: black;
-  top: 1.5rem;
-  right: 1rem;
+  top: 0.8rem;
+  left: -7rem;
   background: none;
   border: none;
   font-size: 18px;
