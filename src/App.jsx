@@ -48,6 +48,12 @@ function App() {
     setUserSelect(null); //limpa o usuario selecionado
   };
 
+  const campo = (pag) => {
+    setCurrentPage(pag);
+    document.getElementById('prox').disabled = false; //habilita o botão de proxima
+    document.getElementById('ante').disabled = false; //habilita o botão de anterior
+  }
+
   return (
     <div className="App">
       <h1>Dashboard de Usuários</h1> {/*titulo da pagina*/}
@@ -71,7 +77,7 @@ function App() {
         <input type="number" min={1} max={Math.ceil(users.length /5)} onKeyDown={(e) => { //input para ir para uma pagina especifica
           if (e.key === 'Enter' && e.target.value > 0 && e.target.value <= Math.ceil(users.length / 5)) { //confere se o valor é valido
             const pag = e.target.value;
-            setCurrentPage(pag); //muda a pagina atual
+            campo(pag); //muda a pagina atual
         }}}/>
       </div>
       {cardAberto && (
