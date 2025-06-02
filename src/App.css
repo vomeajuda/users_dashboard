@@ -2,6 +2,15 @@
   font-family: Arial, sans-serif;
   padding: 20px;
   text-align: center;
+  background-color: hotpink;
+}
+
+h1 {
+  color: black;
+}
+
+p {
+  color: black;
 }
 
 .user-container {
