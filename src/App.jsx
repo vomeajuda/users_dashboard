@@ -60,7 +60,7 @@ function App() {
       <p>Total de usuários: {users.length}</p> {/*total de usuarios*/}
       <div className="user-container">
         {usersAtuais.map((user) => (
-          <UserCard key={user.id} user={user} onClick={clickPopup} /> /*componente que mostra os usuarios*/
+          <UserCard user={user} onClick={clickPopup} /> /*componente que mostra os usuarios*/
         ))}
       </div>
       <div className='arrow-container'>
