@@ -88,6 +88,7 @@ function App() {
             <h3>{userSelect.firstName} {userSelect.lastName}</h3> {/*nome do usuario*/}
             <p>Email: {userSelect.email}</p> {/*email do usuario*/}
             <p>Address: {userSelect.address}</p> {/*endereco do usuario*/}
+            <p>Combustível: {userSelect.combustivel}</p> {/*combustivel do usuario*/}
           </div>
         </div>
       )}

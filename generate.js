@@ -12,6 +12,7 @@ const peoples = lodash.times(500, function (n){
         avatar: faker.image.avatar(),
         address: faker.location.streetAddress(),
         email: faker.internet.email({firstName: firstName.toLowerCase(), lastName: lastName.toLowerCase()}),
+        combustivel: faker.vehicle.fuel(),
     }
 });
 

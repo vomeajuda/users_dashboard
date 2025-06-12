@@ -7,6 +7,7 @@ function UserCard({ user, onClick }) { //componente do card
       <h3>{user.firstName} {user.lastName}</h3> {/*nome do usuario*/}
       <p>{user.email}</p> {/*email do usuario*/}
       <small>{user.address}</small> {/*endereço do usuario*/}
+      <p>{user.combustivel}</p> {/*combustivel do usuario*/}
     </div>
   );
 }
